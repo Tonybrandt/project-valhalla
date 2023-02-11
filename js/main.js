@@ -180,13 +180,13 @@ function agregarAlCarrito(drink){
         // console.log(productosEnCarrito)
         //sweetalert para experiencia de usuario
         Swal.fire({
-            title: 'Ha agregado un producto :D',
-            text: `La bebida ${drink.nombre} ha sido agregado`,
+            title: 'Has agregado un producto',
+            text: `La bebida ${drink.nombre} ha sido agregada`,
             icon: "info",
             confirmButtonText: "Gracias!",
             confirmButtonColor: "green",
             //milisegundo por medida
-            timer: 3000,
+            timer: 2000,
             //para img
             imageUrl: `assets/${drink.imagen}`,
             imageHeight: 200 
@@ -194,11 +194,11 @@ function agregarAlCarrito(drink){
 
     }else{
         //el producto ya se encuentra
-        console.log(`El producto ${drink.nombre} ya se encuentra en el carrito`)
+        console.log(`La bebida ${drink.nombre} ya se encuentra en el carrito`)
         //OTRA OPCION: logica que acumule cantidad
         //que me avise que ya está en el carrito
         Swal.fire({
-            text: `El libro ${drink.nombre} ya existe en el carrito`,
+            text: `La bebida ${drink.nombre} ya existe en el carrito`,
             icon: "info",
             timer: 1500,
             showConfirmButton: false
