@@ -1,0 +1,18 @@
+﻿
+
+.bg-dark {
+    background-color: black !important;
+}
+
+.logo {
+    margin-right: 0 15px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    margin: 0 15px;
+}
+
+#btnBuscar {
+    margin: 0 25px;
+}
