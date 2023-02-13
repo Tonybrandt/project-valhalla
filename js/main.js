@@ -28,8 +28,7 @@ function verCatalogo(array){
     bebidasDiv.innerHTML = ""
 
     for(let drink of array){
-    //código para imprimir el array
-        //creamos un div padre de la card
+        //div padre de la card
         let nuevoDrinkDiv = document.createElement("div")
         nuevoDrinkDiv.className = "col-12 col-md-6 col-lg-4 my-3"
         nuevoDrinkDiv.innerHTML = `
@@ -69,9 +68,8 @@ function agregarAlCarrito(trago){
 
 // ******************************************
 function cargarBebida(array){
-    let inputAutor = document.getElementById("autorInput")
-    let inputTitulo = document.getElementById("tituloInput")
-    // let inputPrecio = document.getElementById("precioInput")
+    let inputAutor = document.getElementById("sugerenciaCombinacion")
+    let inputTitulo = document.getElementById("nombreBebida")
     
     //hacerlo con la function constructora
     const nuevaBebida = new Bebida(array.length+1, inputAutor.value, inputTitulo.value, "new-drink.jpg")
@@ -82,30 +80,26 @@ function cargarBebida(array){
     //guardar en storage:
     localStorage.setItem("bebidas", JSON.stringify(array))
     verCatalogo(array)
-    let formAgregarLibro = document.getElementById("formAgregarLibro")
+    let formAgregarBebida = document.getElementById("formAgregarBebida")
    
-    formAgregarLibro.reset()
+    formAgregarBebida.reset()
 
-    //agregado Toastify:
+
     Toastify({
         text: `La bebida ${nuevaBebida.nombre} ha sido agregado al stock`,
-        duration: 2500,
+        duration: 1500,
         gravity: "top",
         position: "right",
         style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "linear-gradient(to right, #12c2e9, #c471ed, #f64f59)",
             color: "black"
           }
   }).showToast()
  }
-// **************************************
 
 
 function buscarInfo(buscado, array){
-        //condición compuesta || &&
-        //coincidencia total, ej:
-        // libro.autor.toLowerCase() == buscado.toLowerCase() || libro.titulo.toLowerCase() == buscado.toLowerCase()
-        // quiero una coincidencia parcial: método includes
+
     let busquedaArray = array.filter(
             (drink) => drink.nombre.toLowerCase().includes(buscado.toLowerCase()) || drink.nombre.toLowerCase().includes(buscado.toLowerCase())
         )
@@ -117,11 +111,7 @@ function buscarInfo(buscado, array){
         verCatalogo(busquedaArray)
     }
 }
-//     //reemplazar por operador ternario
-    // busquedaArray.length == 0 ? 
-    // (coincidencia.innerHTML = `<h3>No hay coincidencias con su búsqueda</h3>`, verCatalogo(busquedaArray)) 
-    // : (coincidencia.innerHTML = "", verCatalogo(busquedaArray))
-// }
+
 
 
 function cargarProductosCarrito(array){
