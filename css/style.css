@@ -17,6 +17,14 @@
     margin: 0 25px;
 }
 
+.footer {
+    width: 100%;
+    background-color: rgb(226, 43, 220);
+    text-align: center;
+    color: black;
+    font-weight: 500;
+}
+
 .darkMode{
     color: white;
     background-color: #191919;
