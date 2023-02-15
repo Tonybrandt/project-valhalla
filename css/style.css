@@ -16,3 +16,14 @@
 #btnBuscar {
     margin: 0 25px;
 }
+
+.darkMode{
+    color: white;
+    background-color: #191919;
+}
+.darkMode .modal{
+    color: #191919;
+}
+.darkMode .card{
+    color: #191919;
+}
