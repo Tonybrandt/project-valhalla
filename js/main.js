@@ -1,12 +1,14 @@
 ﻿// Tercer pre-entrega: storage, eventos y DOM
+// ¨*No subir node modules
 
+// consulta de seguridad
 // //PROYECTO CON DOM:
 
+// Utilizar ajax o fetch. sintaxis avanzada, un ternario o 2. 1 Librería. Promesas con fetch async await. Carga de datos desde un JSON local o desde una API externa, puede ser app del clima. Agregar un README.md
+
 let bebidasDiv = document.getElementById("bebidas1")
-let verCatalogoBtn = document.getElementById("verCatalogo")
-let ocultarCatalogoBtn = document.getElementById("ocultarCatalogo")
 // *********
-let sugerirBebidaBtn = document.getElementById("sugerirBebidaBtn")
+// let sugerirBebidaBtn = document.getElementById("sugerirBebidaBtn")
 // *********
 let inputBuscador = document.querySelector("#buscador")
 // let coincidencia = document.getElementById("coincidencia")
@@ -32,6 +34,7 @@ function verCatalogo(array){
     for(let drink of array){
     
         let nuevoDrinkDiv = document.createElement("div")
+        nuevoDrinkDiv.setAttribute("id", "bebidasDiv");
         nuevoDrinkDiv.className = "col-12 col-md-6 col-lg-4 my-3"
         nuevoDrinkDiv.innerHTML = `
         <div id="${drink.id}" class="card" style="width: 18rem;">
@@ -231,18 +234,18 @@ function ordenarAlfabeticamenteTitulo(array){
 
 
 //EVENTOS:
-sugerirBebidaBtn.addEventListener("click", ()=>{
-    cargarBebida(bebidas)
+// sugerirBebidaBtn.addEventListener("click", ()=>{
+//     cargarBebida(bebidas)
 
-})
-verCatalogoBtn.onclick = function() {
-    verCatalogo(bebidas)
+// })
+// verCatalogoBtn.onclick = function() {
+//     verCatalogo(bebidas)
     
-}
+// }
 
-ocultarCatalogoBtn.addEventListener("click", ()=>{
-    bebidasDiv.innerHTML =""
-})
+// ocultarCatalogoBtn.addEventListener("click", ()=>{
+//     bebidasDiv.innerHTML =""
+// })
 
 
 inputBuscador.addEventListener("input", ()=>{

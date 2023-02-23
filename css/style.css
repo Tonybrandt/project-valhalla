@@ -1,20 +1,87 @@
-﻿
-
-.bg-dark {
-    background-color: black !important;
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+.body {
+    background-color: black;
+}
+
+.hero {
+    height: 100vh;
+}
+
 
 .logo {
-    margin-right: 0 15px;
+    width: 100%;
+    display: block;
+    object-fit: cover;
 }
 
-.navbar-brand {
-    font-size: 30px;
-    margin: 0 15px;
+.qr {
+    width: 100%;
 }
 
-#btnBuscar {
-    margin: 0 25px;
+.box-arrow {
+    display: block;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.arrow {
+    height: 50px;
+    width: 50px;
+    color: #ffffff;
+}
+
+.navbar {
+    height: 110px;
+    width: 100%;
+    background-color: #232323;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.container {
+    margin: 0 10px;
+    width: 20%;
+    padding: 0;
+    display: block !important;
+    text-align: right;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.containerCarrito {
+    margin: 0;
+    padding: 0;
+}
+/* **************** */
+
+.seleccionar{
+    width: 90%;
+}
+
+#selectOrden {
+    font-size: 20px;
+    text-align: left;
 }
 
 .footer {
@@ -25,7 +92,7 @@
     font-weight: 500;
 }
 
-.darkMode{
+/* .darkMode{
     color: white;
     background-color: #191919;
 }
@@ -34,4 +101,4 @@
 }
 .darkMode .card{
     color: #191919;
-}
+} */
