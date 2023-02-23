@@ -35,10 +35,11 @@
     height: 50px;
     width: 50px;
     color: #ffffff;
+    margin-top: 5px;
 }
 
 .navbar {
-    height: 110px;
+    height: 90px;
     width: 100%;
     background-color: #232323;
     border-bottom-left-radius: 10px;
@@ -80,8 +81,17 @@
 }
 
 #selectOrden {
-    font-size: 20px;
+    font-size: 18px;
+    background-color: #232323;
+    color: #ffffff;
+}
+
+#bebidasDiv {
     text-align: left;
+}
+
+.card-body {
+
 }
 
 .footer {

@@ -38,7 +38,7 @@ function verCatalogo(array){
         nuevoDrinkDiv.className = "col-12 col-md-6 col-lg-4 my-3"
         nuevoDrinkDiv.innerHTML = `
         <div id="${drink.id}" class="card" style="width: 18rem;">
-            <img class="card-img-top img-fluid" style="height: 530px; object-fit: cover;"src="assets/${drink.imagen}" alt="${drink.nombre} de ${drink.nombre}">
+            <img class="card-img-top img-fluid" style="height: 530px; object-fit: cover;"src="assets/${drink.imagen}" alt="${drink.nombre}">
             <div class="card-body">
                 <h4 class="card-title">${drink.nombre}</h4>
                 <p>Bebida: ${drink.nombre}</p>
