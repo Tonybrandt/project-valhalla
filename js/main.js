@@ -11,7 +11,7 @@ let bebidasDiv = document.getElementById("bebidas1")
 // let sugerirBebidaBtn = document.getElementById("sugerirBebidaBtn")
 // *********
 let inputBuscador = document.querySelector("#buscador")
-// let coincidencia = document.getElementById("coincidencia")
+// let coincidencia = document.getElementById("coincidencia") // Función en la linea 104
 // let selectOrden = document.getElementById("selectOrden")
 let botonCarrito = document.getElementById("botonCarrito")
 let modalBodyCarrito = document.getElementById("modal-bodyCarrito")

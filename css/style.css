@@ -4,12 +4,21 @@
     box-sizing: border-box;
 }
 
+a {
+    color: inherit;
+}
+
 .body {
     background-color: black;
 }
 
 .hero {
     height: 100vh;
+}
+
+#botonCarrito {
+    background-color: #64abdd;
+    color: #ca3e9b;
 }
 
 
@@ -21,19 +30,25 @@
 
 .qr {
     width: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .box-arrow {
     display: block;
     width: 100%;
-    display: flex;
     text-align: center;
-    justify-content: center;
+    margin: 0 auto;
+    /* display: flex;
+    text-align: center;
+    justify-content: center; */
 }
 
 .arrow {
-    height: 50px;
+    display: inline-block;
+    height: 45px;
     width: 50px;
+    margin: 0 auto;
     color: #ffffff;
     margin-top: 5px;
 }
@@ -41,6 +56,7 @@
 .navbar {
     height: 90px;
     width: 100%;
+    padding: 0 10px;
     background-color: #232323;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -54,13 +70,16 @@
     padding: 0;
 }
 
-.navbar-toggler {
+.navbar-toggler-icon {
     border: none;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    width: 40px;
+    color: #ffffff;
 }
 
-.container {
+.container-a {
     margin: 0 10px;
-    width: 20%;
     padding: 0;
     display: block !important;
     text-align: right;
@@ -77,7 +96,15 @@
 /* **************** */
 
 .seleccionar{
+    display: block;
     width: 90%;
+}
+
+.container {
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #selectOrden {
@@ -90,8 +117,52 @@
     text-align: left;
 }
 
-.card-body {
+.row {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
 
+.card {
+    display: inline-block;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.card-title {
+    text-align: center;
+    color: #005491;
+    font-size: 28px;
+    margin: 7px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn-outline-success {
+    display: inline-block;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #ca3e9b;
+    border: none;
+    border-radius: 50px;
+    color: #005491;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+}
+
+#btnBuscar {
+    display: inline-block;
+    text-align: center;
+    background-color: #232323;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+    border: solid 1px white;
 }
 
 .footer {
@@ -100,6 +171,17 @@
     text-align: center;
     color: black;
     font-weight: 500;
+}
+
+@media screen and (min-width: 850px) {
+    .logo {
+        display: inline;
+        width: 49%;
+    }
+    .qr {
+        display: inline;
+        width: 49%;
+    }
 }
 
 /* .darkMode{
