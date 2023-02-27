@@ -26,54 +26,30 @@
     <section class="hero">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseExample"
-            aria-controls="collapseExample"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-controls="collapseExample" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="collapseExample">
             <ul class="navbar-nav me-auto">
               <form class="d-inline-flex p-2 formBusca">
-                <input
-                  id="buscador"
-                  class="form-control me-2"
-                  placeholder="Busqueda por bebida"
-                  aria-label="Search"
-                />
+
+                <input id="buscador" class="form-control me-2" placeholder="Busqueda por bebida" aria-label="Search"/>
 
                 <a href="#bebidasDiv">
                   <button id="btnBuscar" class="btn btn-outline-success">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-search"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                      />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
                   </button>
                 </a>
+
               </form>
             </ul>
           </div>
         </div>
         <div class="container-a">
-          <!-- Boton Modo Oscuro -->
-          <!-- <div class="col-3">
-              <button id="toggleMode" class="btn btn-dark"><i class="fa-regular fa-moon"></i></button>
-            </div>  -->
-
           <ul
             style="list-style: none"
             className="navbar-nav me-auto"
@@ -91,32 +67,23 @@
           </ul>
         </div>
       </nav>
-
-      <img src="assets/logo-valhalla-fondo.jpg" alt="" class="logo" />
-
-      <img src="assets/qr-p.jpeg" alt="" class="qr" />
+      <!-- Boton Modo Oscuro -->
+          <div class="col-3">
+              <button id="toggleMode" class="btn btn-dark"><i class="fa-regular fa-sun"></i></button>
+            </div> 
+      <img src="assets/logo-valhalla-fondo.jpg" alt="Logo de la tienda VALHALLA" class="logo" />
+      <img src="assets/qr-p.jpeg" alt="Qr redes sociales" class="qr" />
       <div class="box-arrow">
         <a href="#bebidasDiv">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="arrow"
-            width="16"
-            height="30"
-            fill="currentColor"
-            class="bi bi-arrow-down"
-            viewBox="0 0 16 16"
-          >
-            <path class="arrow"
-              fill-rule="evenodd"
-              d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" class="arrow" width="16" height="30" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+            <path class="arrow" fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
           </svg>
         </a>
       </div>
     </section>
     <!-- aca termina el hero -->
 
-    <ul class="seleccionar">
+    <ul style="list-style: none" class="seleccionar">
       <select
         id="selectOrden"
         class="form-select form-select-sm"
@@ -134,7 +101,7 @@
       <div id="bebidas1" class="row"></div>
     </div>
 
-    <!--Modals-->
+    <!--Modales-->
 
     <div
       class="modal fade"
@@ -147,7 +114,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              Carrito de Compras
+              Carrito de Bebidas <i class="fa-solid fa-wine-bottle"></i>
             </h5>
             <button
               type="button"
@@ -168,17 +135,17 @@
             >
               Cerrar
             </button>
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="btn btn-success"
-              id="botonFinalizarCompra"
-            >
+            <button type="button" data-bs-dismiss="modal" class="btn btn-success btn-fin" id="finalizarCompra">
               Finalizar Compra
             </button>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="social-networks">
+      <a href="https://www.instagram.com/valhalla_bebidas.ag/" class="social-network" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=5493547544329" class="social-network" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
     <footer class="footer">Hecho por Gaston Brandt</footer>
@@ -202,7 +169,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- Mis Scripts -->
-    <script src="js/class.js"></script>
+    <script src="js/constructor.js"></script>
     <script src="js/main.js"></script>
     <!-- <script src="js/modoOscuro.js"></script> -->
   </body>

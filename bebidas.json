@@ -1,0 +1,62 @@
+﻿[
+    {
+        "id": 1,
+        "nombre": "Fernet",
+        "precio": 2000,
+        "imagen": "fernet1.jpeg"
+    },
+    {
+        "id": 2,
+        "nombre": "Champagne Du",
+        "precio": 2000,
+        "imagen": "champagne-du.jpeg"
+    },
+    {
+        "id": 3,
+        "nombre": "Gordons Gin",
+        "precio": 2700,
+        "imagen": "gin-gordons.jpeg"
+    },
+    {
+        "id": 4,
+        "nombre": "Smirnoff Vodka",
+        "precio": 1900,
+        "imagen": "smirnoff.jpeg"
+    },
+    {
+        "id": 5,
+        "nombre": "Skyy Vodka",
+        "precio": 1800,
+        "imagen": "vodka-skyy.jpeg"
+    },
+    {
+        "id": 6,
+        "nombre": "Promo Fernet + 1 Coca Cola",
+        "precio": 2500,
+        "imagen": "promo-fernet1.jpeg"
+    },
+    {
+        "id": 7,
+        "nombre": "Promo Fernet + 2 Coca Cola",
+        "precio": 2700,
+        "imagen": "promo-fernet2.jpeg"
+    },
+    {
+        "id": 8,
+        "nombre": "Promo Gin Gordons + 1 Paso de los toros",
+        "precio": 3000,
+        "imagen": "promo-gin.jpeg"
+    },
+    {
+        "id": 9,
+        "nombre": "Promo Vodka Smirnoff + 4 Speed",
+        "precio": 2650,
+        "imagen": "promo-smirnoff.jpeg"
+    },
+    {
+        "id": 10,
+        "nombre": "Promo Vodka Skyy + 4 Speed",
+        "precio": 2550,
+        "imagen": "promo-vodka-skyy.jpeg"
+    }
+]

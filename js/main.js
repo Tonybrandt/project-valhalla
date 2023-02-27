@@ -6,6 +6,12 @@
 
 // Utilizar ajax o fetch. sintaxis avanzada, un ternario o 2. 1 Librería. Promesas con fetch async await. Carga de datos desde un JSON local o desde una API externa, puede ser app del clima. Agregar un README.md
 
+// 1:50 hora siguiente, retomar
+// 2:35  2da parte clase 8
+// ctrl + f para buscar
+
+// Capturando objetos del DOM
+
 let bebidasDiv = document.getElementById("bebidas1")
 // *********
 // let sugerirBebidaBtn = document.getElementById("sugerirBebidaBtn")
@@ -16,6 +22,7 @@ let inputBuscador = document.querySelector("#buscador")
 let botonCarrito = document.getElementById("botonCarrito")
 let modalBodyCarrito = document.getElementById("modal-bodyCarrito")
 // let precioTotal = document.getElementById("precioTotal")
+let btnFinalizarCompra = document.querySelector('#finalizarCompra')
 
 let productosEnCarrito
 if(localStorage.getItem("carrito")){
@@ -24,6 +31,8 @@ if(localStorage.getItem("carrito")){
     productosEnCarrito = []
     localStorage.setItem("carrito", productosEnCarrito)
 }
+
+// Funciones
 
 verCatalogo(bebidas)
 
@@ -57,9 +66,6 @@ function verCatalogo(array){
 }
 
 
-
-
-
 function agregarAlCarrito(trago){
     
     console.log(`El producto ${trago.nombre} ha sido agregado al carrito y vale ${trago.precio}`)
@@ -71,34 +77,33 @@ function agregarAlCarrito(trago){
     
 }
 
-
-function cargarBebida(array){
-    let sugerenciaCombinacion = document.getElementById("sugerenciaCombinacion")
-    let nombreBebida = document.getElementById("nombreBebida")
+// function cargarBebida(array){
+//     let sugerenciaCombinacion = document.getElementById("sugerenciaCombinacion")
+//     let nombreBebida = document.getElementById("nombreBebida")
     
-    //function constructora
-    const nuevaBebida = new Bebida(array.length+1, nombreBebida.value, sugerenciaCombinacion.value, "new-drink.jpg")
-    console.log(nuevaBebida)
+//     //function constructora
+//     const nuevaBebida = new Bebida(array.length+1, nombreBebida.value, sugerenciaCombinacion.value, "new-drink.jpg")
+//     console.log(nuevaBebida)
  
-    array.push(nuevaBebida)
-    localStorage.setItem("bebidas", JSON.stringify(array))
-    verCatalogo(array)
-    let formAgregarBebida = document.getElementById("formAgregarBebida")
+//     array.push(nuevaBebida)
+//     localStorage.setItem("bebidas", JSON.stringify(array))
+//     verCatalogo(array)
+//     let formAgregarBebida = document.getElementById("formAgregarBebida")
    
-    formAgregarBebida.reset()
+//     formAgregarBebida.reset()
 
 
-    Toastify({
-        text: `La bebida ${nuevaBebida.nombre} ha sido agregado al stock`,
-        duration: 1500,
-        gravity: "top",
-        position: "right",
-        style: {
-            background: "linear-gradient(to right, #12c2e9, #c471ed, #f64f59)",
-            color: "black"
-          }
-  }).showToast()
- }
+//     Toastify({
+//         text: `La bebida ${nuevaBebida.nombre} ha sido agregado al stock`,
+//         duration: 1500,
+//         gravity: "top",
+//         position: "right",
+//         style: {
+//             background: "linear-gradient(to right, #12c2e9, #c471ed, #f64f59)",
+//             color: "black"
+//           }
+//   }).showToast()
+//  }
 
 
 function buscarInfo(buscado, array){
@@ -154,8 +159,7 @@ function agregarAlCarrito(drink){
     if(bebidaAgregada == undefined){
         
         productosEnCarrito.push(drink)
-        localStorage.setItem("carrito", JSON.stringify(productosEnCarrito))
-        
+        localStorage.setItem("carrito", JSON.stringify(productosEnCarrito))  
 
         Toastify({
             text: `Has agregado ${drink.nombre} al carrito`,
@@ -232,20 +236,43 @@ function ordenarAlfabeticamenteTitulo(array){
           verCatalogo(ordenadoAlfabeticamente)
 }
 
+function finalizarCompra(fn) {
+    Swal.fire({
+        title: 'Desea finalizar la compra?',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, seguro',
+        cancelButtonText: 'No, no quiero',
+        confirmButtonColor: 'green',
+        cancelButtonColor: 'red',
+    }).then( (result)=> {
+            if(result.isConfirmed){
+                let totalCompra = compraTotal(fn)
+                Swal.fire({
+                    title: 'Compra realizada',
+                    icon: 'success',
+                    confirmButtonColor: 'green',
+                    text: `Muchas gracias por su compra ha adquirido nuestros productos. Por un total de ${totalCompra}`,
+                    })
+                productosEnCarrito = []
+                localStorage.removeItem("carrito")    
+                
+            }else{
+                Swal.fire({
+                    title: 'Compra no realizada',
+                    icon: 'info',
+                    text: `La compra no ha sido realizada! Atención sus productos siguen en el carrito :D`,
+                    confirmButtonColor: 'green',
+                    timer:3500
+                })
+            }
+    })
+
+}
+
+
 
 //EVENTOS:
-// sugerirBebidaBtn.addEventListener("click", ()=>{
-//     cargarBebida(bebidas)
-
-// })
-// verCatalogoBtn.onclick = function() {
-//     verCatalogo(bebidas)
-    
-// }
-
-// ocultarCatalogoBtn.addEventListener("click", ()=>{
-//     bebidasDiv.innerHTML =""
-// })
 
 
 inputBuscador.addEventListener("input", ()=>{
@@ -267,6 +294,10 @@ selectOrden.addEventListener("change", ()=>{
 
 botonCarrito.addEventListener("click", ()=>{
     cargarProductosCarrito(productosEnCarrito)
+})
+
+btnFinalizarCompra.addEventListener('click', ()=> {
+    finalizarCompra(productosEnCarrito)
 })
 
  
