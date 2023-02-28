@@ -1,32 +1,24 @@
-﻿// Tercer pre-entrega: storage, eventos y DOM
-// ¨*No subir node modules
-
-// consulta de seguridad
-// //PROYECTO CON DOM:
-
-// Utilizar ajax o fetch. sintaxis avanzada, un ternario o 2. 1 Librería. Promesas con fetch async await. Carga de datos desde un JSON local o desde una API externa, puede ser app del clima. Agregar un README.md
-
-// 1:50 hora siguiente, retomar
-// 2:35  2da parte clase 8
-// ctrl + f para buscar
+﻿// ctrl + f para buscar
 
 // Capturando objetos del DOM
 
 let bebidasDiv = document.getElementById("bebidas1")
-// *********
-// let sugerirBebidaBtn = document.getElementById("sugerirBebidaBtn")
-// *********
 let inputBuscador = document.querySelector("#buscador")
-// let coincidencia = document.getElementById("coincidencia") // Función en la linea 104
-// let selectOrden = document.getElementById("selectOrden")
+let coincidencia = document.getElementById("coincidencia")
+let seleccionDeOrden = document.getElementById("seleccionDeOrden")
 let botonCarrito = document.getElementById("botonCarrito")
 let modalBodyCarrito = document.getElementById("modal-bodyCarrito")
 // let precioTotal = document.getElementById("precioTotal")
 let btnFinalizarCompra = document.querySelector('#finalizarCompra')
 
-let productosEnCarrito
+let productosEnCarrito = []
 if(localStorage.getItem("carrito")){
-    productosEnCarrito = JSON.parse(localStorage.getItem("carrito"))
+
+    for(let bebida of JSON.parse(localStorage.getItem("carrito"))){
+        let unidades = bebida.cantidad
+        let bebidaCarrito = new Bebida(bebida.id, bebida.nombre, bebida.precio, bebida.imagen)
+        bebidaCarrito.cantidad = unidades
+        productosEnCarrito.push(bebidaCarrito)}
 }else{
     productosEnCarrito = []
     localStorage.setItem("carrito", productosEnCarrito)
@@ -36,8 +28,8 @@ if(localStorage.getItem("carrito")){
 
 verCatalogo(bebidas)
 
-function verCatalogo(array){
-    
+function verCatalogo(array){ 
+
     bebidasDiv.innerHTML = ""
 
     for(let drink of array){
@@ -65,7 +57,6 @@ function verCatalogo(array){
     }
 }
 
-
 function agregarAlCarrito(trago){
     
     console.log(`El producto ${trago.nombre} ha sido agregado al carrito y vale ${trago.precio}`)
@@ -77,42 +68,13 @@ function agregarAlCarrito(trago){
     
 }
 
-// function cargarBebida(array){
-//     let sugerenciaCombinacion = document.getElementById("sugerenciaCombinacion")
-//     let nombreBebida = document.getElementById("nombreBebida")
-    
-//     //function constructora
-//     const nuevaBebida = new Bebida(array.length+1, nombreBebida.value, sugerenciaCombinacion.value, "new-drink.jpg")
-//     console.log(nuevaBebida)
- 
-//     array.push(nuevaBebida)
-//     localStorage.setItem("bebidas", JSON.stringify(array))
-//     verCatalogo(array)
-//     let formAgregarBebida = document.getElementById("formAgregarBebida")
-   
-//     formAgregarBebida.reset()
-
-
-//     Toastify({
-//         text: `La bebida ${nuevaBebida.nombre} ha sido agregado al stock`,
-//         duration: 1500,
-//         gravity: "top",
-//         position: "right",
-//         style: {
-//             background: "linear-gradient(to right, #12c2e9, #c471ed, #f64f59)",
-//             color: "black"
-//           }
-//   }).showToast()
-//  }
-
-
 function buscarInfo(buscado, array){
 
     let busquedaArray = array.filter(
             (drink) => drink.nombre.toLowerCase().includes(buscado.toLowerCase()) || drink.nombre.toLowerCase().includes(buscado.toLowerCase())
         )
     if(busquedaArray.length == 0){
-        coincidencia.innerHTML = `<h3>No hay coincidencias con su búsqueda</h3>`
+        coincidencia.innerHTML = `<h3 class="coincidencia">No hay coincidencias con su búsqueda</h3>`
         verCatalogo(busquedaArray)
     }else{
         coincidencia.innerHTML = ""
@@ -126,12 +88,19 @@ function cargarProductosCarrito(array){
     array.forEach((productoCarrito)=>{
         
         modalBodyCarrito.innerHTML += `
-        <div class="card border-primary mb-3" id ="productoCarrito${productoCarrito.id}" style="max-width: 540px;">
+        <div class="card border-primary mb-3" id ="productoCarrito${productoCarrito.id}" style="max-width: 281px;">
             <img class="card-img-center" height="500px" style="object-fit: cover;" src="assets/${productoCarrito.imagen}" alt="${productoCarrito.nombre}">
             <div class="card-body">
                     <h4 class="card-title">${productoCarrito.nombre}</h4>
                 
-                    <p class="card-text">$${productoCarrito.precio}</p> 
+                    <p class="card-text">Precio por unidad: $${productoCarrito.precio}</p>
+                    <p class="card-text">Unidades: ${productoCarrito.cantidad}</p> 
+                    <p class="card-text">Sub total: $${productoCarrito.precio * productoCarrito.cantidad}</p>
+
+                    <button class= "btn btn-success" id="botonSumarUnidad${productoCarrito.id}"><i class=""></i>+1</button>
+
+                    <button class= "btn btn-danger" id="botonEliminarUnidad${productoCarrito.id}"><i class=""></i>-1</button>
+
                     <button class= "btn btn-danger" id="botonEliminar${productoCarrito.id}"><i class="fas fa-trash-alt"></i></button>
             </div>    
         </div>
@@ -147,6 +116,13 @@ function cargarProductosCarrito(array){
             array.splice(posicion, 1)
             localStorage.setItem("carrito", JSON.stringify(array))   
             compraTotal(array)
+        })
+        let btnSumarUnidad = document.querySelector(`#botonSumarUnidad${productoCarrito.id}`)
+        btnSumarUnidad.addEventListener('click', ()=> {
+
+            productoCarrito.sumarUnidad()
+            localStorage.setItem('carrito', JSON.stringify(array))
+            cargarProductosCarrito(array)
         })
      })
     compraTotal(array)
@@ -279,13 +255,13 @@ inputBuscador.addEventListener("input", ()=>{
     buscarInfo(inputBuscador.value.toLowerCase(), bebidas)
 })
 
-selectOrden.addEventListener("change", ()=>{
+seleccionDeOrden.addEventListener("change", ()=>{
 
-    if(selectOrden.value == "1"){
+    if(seleccionDeOrden.value == "1"){
         ordenarMayorMenor(bebidas)
-    }else if(selectOrden.value =="2"){
+    }else if(seleccionDeOrden.value =="2"){
         ordenarMenorMayor(bebidas)
-    }else if(selectOrden.value == "3"){
+    }else if(seleccionDeOrden.value == "3"){
         ordenarAlfabeticamenteTitulo(bebidas)
     }else{
         verCatalogo(bebidas)

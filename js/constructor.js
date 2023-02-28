@@ -14,7 +14,7 @@ class Bebida {
         this.cantidad += 1
     }
     restarUnidad(){
-        this.cantidad += 1
+        this.cantidad = this.cantidad - 1
     }
 }
 
@@ -30,6 +30,10 @@ const mostrarBebidas = async () => {
     localStorage.setItem("bebidas", JSON.stringify(bebidas))
 }
 
-localStorage.getItem("bebidas") ?
-bebidas = JSON.parse(localStorage.getItem("bebidas")) : 
-mostrarBebidas()
+if(localStorage.getItem("bebidas")){
+for(let bebida of JSON.parse(localStorage.getItem("bebidas"))){
+    let bebidaSt = new Bebida(bebida.id, bebida.nombre, bebida.precio, bebida.imagen)
+    bebidas.push(bebidaSt)} 
+}else {
+    mostrarBebidas()
+}

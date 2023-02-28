@@ -113,7 +113,7 @@ a {
     justify-content: center;
 }
 
-#selectOrden {
+#seleccionDeOrden {
     font-size: 18px;
     background-color: #232323;
     color: #ffffff;
@@ -210,6 +210,10 @@ p {
     border-radius: 7px;
     color: rgb(255, 255, 255);
     border: solid 1px white;
+}
+
+.coincidencia {
+    color: #ffffff;
 }
 
 .social-networks {
