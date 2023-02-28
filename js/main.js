@@ -174,13 +174,6 @@ function agregarAlCarrito(drink){
 
     }else{
 
-        // Swal.fire({
-        //     text: `La bebida ${drink.nombre} ya existe en el carrito`,
-        //     icon: "info",
-        //     timer: 1500,
-        //     showConfirmButton: false
-        // })
-
         Toastify({
             text: `La bebida ${drink.nombre} ya existe en el carrito, podes añadir mas unidades desde el carrito`,
             duration: 2000,
