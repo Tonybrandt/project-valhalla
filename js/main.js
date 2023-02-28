@@ -117,11 +117,35 @@ function cargarProductosCarrito(array){
             localStorage.setItem("carrito", JSON.stringify(array))   
             compraTotal(array)
         })
+
         let btnSumarUnidad = document.querySelector(`#botonSumarUnidad${productoCarrito.id}`)
         btnSumarUnidad.addEventListener('click', ()=> {
 
             productoCarrito.sumarUnidad()
             localStorage.setItem('carrito', JSON.stringify(array))
+            cargarProductosCarrito(array)
+        })
+
+        document.querySelector(`#botonEliminarUnidad${productoCarrito.id}`).addEventListener('click', () => {
+            let cantUnidades = productoCarrito.restarUnidad()
+
+            if (cantUnidades < 1){
+                
+                let cardProducto = document.getElementById(`productoCarrito${productoCarrito.id}`)
+
+                cardProducto.remove()
+
+                let posicion = array.indexOf(productoCarrito)
+
+                array.splice(posicion, 1)
+
+                localStorage.setItem("carrito", JSON.stringify(array))   
+
+                compraTotal(array)
+            }else{
+                localStorage.setItem('carrito', JSON.stringify(array))
+
+            }
             cargarProductosCarrito(array)
         })
      })
@@ -158,7 +182,7 @@ function agregarAlCarrito(drink){
         // })
 
         Toastify({
-            text: `La bebida ${drink.nombre} ya existe en el carrito`,
+            text: `La bebida ${drink.nombre} ya existe en el carrito, podes añadir mas unidades desde el carrito`,
             duration: 2000,
             gravity: "top",
             position: "right",
@@ -173,7 +197,7 @@ function agregarAlCarrito(drink){
 
 function compraTotal(array){
 
-    let total = array.reduce((acc, productoCarrito)=> acc + productoCarrito.precio ,0)
+    let total = array.reduce((acc, productoCarrito)=> acc + (productoCarrito.precio * productoCarrito.cantidad) ,0)
     
     total == 0 ?
     precioTotal.innerHTML = `No hay productos agregados` :

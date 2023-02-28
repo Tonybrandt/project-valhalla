@@ -15,6 +15,7 @@ class Bebida {
     }
     restarUnidad(){
         this.cantidad = this.cantidad - 1
+        return this.cantidad
     }
 }
 
