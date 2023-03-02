@@ -18,8 +18,18 @@ a {
 
 .btn-dark {
     position: absolute;
-    top: 100px;
+    top: 95px;
     right: 18px;
+    border: none;
+    opacity: .5;
+}
+
+.btn-light {
+    position: absolute;
+    top: 95px;
+    right: 18px;
+    border: none;
+    opacity: .5;
 }
 
 #botonCarrito {
@@ -248,13 +258,38 @@ p {
     }
 }
 
-/* .darkMode{
+.lightMode{
     color: white;
-    background-color: #191919;
+    background-color: #dcdcdc;
 }
-.darkMode .modal{
+
+.lightMode .hero {
+    background-color: #000
+}
+.lightMode .modal{
     color: #191919;
 }
-.darkMode .card{
+.lightMode .card{
     color: #191919;
-} */
+}
+
+.lightMode .navbar {
+    background-color: #dcdcdc;
+}
+
+.lightMode .navbar-toggler-icon {
+    background-color: #dcdcdc;
+}
+
+.lightMode #seleccionDeOrden {
+    background-color: #dcdcdc;
+    border: 1px solid #191919;
+    color: #000;
+}
+
+.lightMode .card-body {
+    background-color: #000;
+    Color: #dcdcdc;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
