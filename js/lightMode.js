@@ -2,7 +2,11 @@
 let moon = document.querySelector('.moon')
 let sun = document.querySelector('.sun')
 
+sun.style.display = 'block'
+moon.style.display = 'none'
+
 if(localStorage.getItem("lightMode")){
+
     if (JSON.parse(localStorage.getItem("lightMode")) == true){
         moon.style.display = 'block'
         sun.style.display = 'none'
@@ -10,8 +14,8 @@ if(localStorage.getItem("lightMode")){
     }
 }else{
     localStorage.setItem("lightMode", false)
-    moon.style.display = 'none'
     sun.style.display = 'block'
+    moon.style.display = 'none'
 }
 
 btnSwitch.addEventListener("click", ()=>{
