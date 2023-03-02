@@ -1,16 +1,8 @@
 ﻿let btnSwitch = document.getElementById("switch")
 
-let moon = document.createElement("p")
-moon.className = "moon"
-moon.append(`<i class="fa-regular fa-moon"></i>`)
-// moon.innerHTML = `<i class="fa-regular fa-moon"></i>`
-let sun = document.createElement('p')
-this.className = 'sun'
-sun.append(`<i class="fa-regular fa-sun"></i>`)
-
 if(localStorage.getItem("lightMode")){
     if(JSON.parse(localStorage.getItem("lightMode")) == true){
-        btnSwitch.innerText = `Claro`
+        btnSwitch.innerText = `Oscuro`
         btnSwitch.className = `btn btn-dark`
     }
 }else{
