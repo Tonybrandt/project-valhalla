@@ -230,12 +230,13 @@ function ordenarAlfabeticamenteTitulo(array){
 }
 
 function finalizarCompra(fn) {
+
     Swal.fire({
         title: 'Desea finalizar la compra?',
         icon: 'info',
         showCancelButton: true,
-        confirmButtonText: 'Sí, seguro',
-        cancelButtonText: 'No, no quiero',
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No',
         confirmButtonColor: 'green',
         cancelButtonColor: 'red',
     }).then( (result)=> {
@@ -245,7 +246,7 @@ function finalizarCompra(fn) {
                     title: 'Compra realizada',
                     icon: 'success',
                     confirmButtonColor: 'green',
-                    text: `Muchas gracias por su compra ha adquirido nuestros productos. Por un total de ${totalCompra}`,
+                    text: `Muchas gracias por su compra ha adquirido nuestras bebidas. Por un total de ${totalCompra}`,
                     })
                 productosEnCarrito = []
                 localStorage.removeItem("carrito")    
@@ -254,7 +255,7 @@ function finalizarCompra(fn) {
                 Swal.fire({
                     title: 'Compra no realizada',
                     icon: 'info',
-                    text: `La compra no ha sido realizada! Atención sus productos siguen en el carrito :D`,
+                    text: `La compra no ha sido realizada! Sus productos siguen en el carrito`,
                     confirmButtonColor: 'green',
                     timer:3500
                 })
@@ -262,8 +263,6 @@ function finalizarCompra(fn) {
     })
 
 }
-
-
 
 //EVENTOS:
 
@@ -292,22 +291,3 @@ botonCarrito.addEventListener("click", ()=>{
 btnFinalizarCompra.addEventListener('click', ()=> {
     finalizarCompra(productosEnCarrito)
 })
-
- 
-
-
-// Toastify({
-//     text: "This is a toast",
-//     duration: 3000,
-//     destination: "https://github.com/apvarun/toastify-js",
-//     newWindow: true,
-//     close: true,
-//     gravity: "bottom", // `top` or `bottom`
-//     position: "center", // `left`, `center` or `right`
-//     stopOnFocus: true, // Prevents dismissing of toast on hover
-//     style: {
-//       background: "linear-gradient(to right, #00b09b, #96c93d)",
-//       color: "black"
-//     },
-//     onClick: function(){} // Callback after click
-//   }).showToast();
