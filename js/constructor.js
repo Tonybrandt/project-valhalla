@@ -1,13 +1,11 @@
 ﻿//class constructora
 class Bebida {
     constructor(id, nombre, precio, imagen){
-        //propiedades o atributos de nuestra clase
         this.id = id,
         this.nombre = nombre,
         this.precio = precio, 
         this.imagen = imagen,
         this.cantidad = 1
-        
     }
     //métodos
     sumarUnidad(){
