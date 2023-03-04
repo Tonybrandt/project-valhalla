@@ -225,12 +225,21 @@ p {
     color: #ffffff;
 }
 
+.title {
+    text-align: center;
+    font-size: 30px;
+    color: #d1d1d1;
+    margin: 20px auto;
+    width: 95%;
+}
+
 .social-networks {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: centers;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .social-network {
