@@ -21,10 +21,28 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <title>Valhalla</title>
+    <!-- Iconos-->
+    <script defer src="https://kit.fontawesome.com/f1b28400fa.js" crossorigin="anonymous"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Saira+Condensed:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   </head>
   <body class="body">
-    <section class="hero">
-      <nav class="navbar navbar-expand-lg">
+    <header class="hero">
+      <nav class="nav">
+        <img class="img-logo" src="assets/logo-valhalla-fondo - copia.jpg" alt="logo of Valhalla">
+        <div class="menu-toggle"></div>
+        <div class="nav-container">
+          <a class="nav-link" id="store" href="#store">Tienda</a>
+          <a class="nav-link" href="">Nosotros</a>
+          <a class="nav-link" href="">Contacto</a>
+          <a id="botonCarrito" data-bs-toggle="modal"
+          data-bs-target="#idModalCarrito"
+          class="nav-link" href=""><i class="fas fa-shopping-cart fa-1x"></i></a>
+        </div>
+      </nav>
+      <!-- <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-controls="collapseExample" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,40 +84,51 @@
             </li>
           </ul>
         </div>
-      </nav>
-      <!-- Boton Modo Claro -->
-          <div class="col-3">
-              <button id="switch" class="btn btn-dark"><span class="sun"><i class="fa-regular fa-sun"></i></span></i><span class="moon"><i class="fa-regular fa-moon"></i></span></button>
-            </div> 
-      <img src="assets/logo-valhalla-fondo.jpg" alt="Logo de la tienda VALHALLA" class="logo" />
-      <img src="assets/qr-p.jpeg" alt="Qr redes sociales" class="qr" />
-      <div class="box-arrow">
-        <a href="#bebidasDiv">
-          <svg xmlns="http://www.w3.org/2000/svg" class="arrow" width="16" height="30" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-            <path class="arrow" fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-          </svg>
-        </a>
-      </div>
-    </section>
+      </nav> -->
+      <!-- Boton Modo Oscuro -->
+          
+            <div id="toggle">
+              <i class="indicator"></i>
+          </div>
+
+      <!-- Nuevo header -->
+      <section class="showcase">
+        
+        <div class="left">
+          <h1 class="title">VALHALLA</h1>
+          <h2 class="sub-title">Tienda de bebidas</h2>
+          <img class="estrella celeste" src="assets/estrella1.svg" alt="">
+          <img class="estrella amarilla" src="assets/estrella2.svg" alt="">
+          <img class="estrella verde" src="assets/estrella3.svg" alt="">
+          <h3 class="sub-title-2">Nosotros hacemos tu previa</h3>
+          <img class="hacha" src="assets/hacha.svg" alt="">
+          <img src="assets/wine-bottle-1.png" class="botella" alt="">
+        </div>
+      
+      </section>
+    </header>
+
     <!-- fin del hero -->
 
-    <ul style="list-style: none" class="seleccionar">
-      <select
-        id="seleccionDeOrden"
-        class="form-select form-select-sm"
-        aria-label=".form-select-sm example"
-      >
-        <option selected>Ordenar por:</option>
-        <option value="1">Mayor a menor precio</option>
-        <option value="2">Menor a mayor precio</option>
-        <option value="3">Alfabeticamente</option>
-      </select>
-    </ul>
+    
+    <main class="container-a" id="store">
+      <h2 class="main__title">Bienvenid@s a la tienda de VALHALLA</h2>
 
-    <div class="container">
-      <div id="coincidencia"></div>
-      <div id="bebidas1" class="row"></div>
-    </div>
+      <ul style="list-style: none" class="seleccionar">
+        <select id="seleccionDeOrden" class="form-select form-select-sm"
+          aria-label=".form-select-sm example">
+          <option selected>Ordenar por:</option>
+          <option value="1">Mayor a menor precio</option>
+          <option value="2">Menor a mayor precio</option>
+          <option value="3">Alfabeticamente</option>
+        </select>
+      </ul>
+
+      <div class="container">
+        <div id="coincidencia"></div>
+        <div id="bebidas1" class="row"></div>
+      </div>
+    </main>
 
     <!--Modales-->
 
@@ -128,28 +157,21 @@
             <p id="precioTotal"></p>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-            <button type="button" data-bs-dismiss="modal" class="btn btn-success btn-fin" id="finalizarCompra">
-              Finalizar Compra
-            </button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+            <button type="button" data-bs-dismiss="modal" class="btn btn-success btn-fin" id="finalizarCompra">Finalizar Compra</button>
           </div>
         </div>
       </div>
     </div>
 
-    <h4 class="title">Seguinos o contactanos a través de nuestras redes</h4>
+    <h4 class="title__social">Seguinos o contactanos a través de nuestras redes</h4>
     <div class="social-networks">
       <a href="https://www.instagram.com/valhalla_bebidas.ag/" class="social-network" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       <a href="https://api.whatsapp.com/send?phone=5493547544329" class="social-network" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 
-    <footer class="footer">Hecho por Gaston Brandt</footer>
+    <footer class="footer">VALHALLA ©</footer>
 
     <!--Script de Bootstrap-->
     <script
@@ -163,11 +185,6 @@
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
-    ></script>
-    <!-- Iconos-->
-    <script
-      src="https://kit.fontawesome.com/f1b28400fa.js"
-      crossorigin="anonymous"
     ></script>
     <!-- Mis Scripts -->
     <script src="js/constructor.js"></script>

@@ -1,9 +1,12 @@
 ﻿// ctrl + f para buscar
 
 // Capturando objetos del DOM
+const menuToggle = document.querySelector('.menu-toggle')
+const navigation = document.querySelector('.nav-container')
+
 
 let bebidasDiv = document.getElementById("bebidas1")
-let inputBuscador = document.querySelector("#buscador")
+// let inputBuscador = document.querySelector("#buscador")
 let coincidencia = document.getElementById("coincidencia")
 let seleccionDeOrden = document.getElementById("seleccionDeOrden")
 let botonCarrito = document.getElementById("botonCarrito")
@@ -38,12 +41,12 @@ function verCatalogo(array){
         nuevoDrinkDiv.setAttribute("id", "bebidasDiv");
         nuevoDrinkDiv.className = "col-12 col-md-6 col-lg-4 my-3"
         nuevoDrinkDiv.innerHTML = `
-        <div id="${drink.id}" class="card" style="width: 18rem;">
-            <img class="card-img-top img-fluid" style="height: 530px; object-fit: cover;"src="assets/${drink.imagen}" alt="${drink.nombre}">
+        <div id="${drink.id}" class="card">
+            <img class="card-img-top img-fluid" src="assets/${drink.imagen}" alt="${drink.nombre}">
             <div class="card-body">
                 <h4 class="card-title">${drink.nombre}</h4>
-                <p>Bebida: ${drink.nombre}</p>
-                <p class="">Precio: ${drink.precio}</p>
+                <p class="copy">Bebida: ${drink.nombre}</p>
+                <p class="copy">Precio: $${drink.precio}</p>
                 <button id="agregarBtn${drink.id}" class="btn btn-outline-success">Agregar al carrito</button>
             </div>
         </div> 
@@ -71,7 +74,7 @@ function agregarAlCarrito(trago){
 function buscarInfo(buscado, array){
 
     let busquedaArray = array.filter(
-            (drink) => drink.nombre.toLowerCase().includes(buscado.toLowerCase()) || drink.nombre.toLowerCase().includes(buscado.toLowerCase())
+            (drink) => drink.nombre.toLowerCase().includes(buscado.toLowerCase()) //|| drink.nombre.toLowerCase().includes(buscado.toLowerCase())
         )
     if(busquedaArray.length == 0){
         coincidencia.innerHTML = `<h3 class="coincidencia">No hay coincidencias con su búsqueda</h3>`
@@ -267,9 +270,9 @@ function finalizarCompra(fn) {
 //EVENTOS:
 
 
-inputBuscador.addEventListener("input", ()=>{
-    buscarInfo(inputBuscador.value.toLowerCase(), bebidas)
-})
+// inputBuscador.addEventListener('input', ()=>{
+//     buscarInfo(inputBuscador.value.toLowerCase(), bebidas)
+// })
 
 seleccionDeOrden.addEventListener("change", ()=>{
 
@@ -291,3 +294,17 @@ botonCarrito.addEventListener("click", ()=>{
 btnFinalizarCompra.addEventListener('click', ()=> {
     finalizarCompra(productosEnCarrito)
 })
+
+// const store = document.querySelector('#store');
+
+// store.onclick = () => {
+   
+// }
+
+menuToggle.onclick = function () {
+    menuToggle.classList.toggle('active');
+    navigation.classList.toggle('active');
+
+}
+
+
