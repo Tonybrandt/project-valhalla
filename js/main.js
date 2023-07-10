@@ -1,6 +1,4 @@
-﻿// ctrl + f para buscar
-
-// Capturando objetos del DOM
+﻿// Capturando objetos del DOM
 const menuToggle = document.querySelector('.menu-toggle')
 const navigation = document.querySelector('.nav-container')
 

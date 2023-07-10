@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/logo-valhalla.ico">
+    <link rel="icon" href="assets/logo-valhalla.ico" />
     <!--Bootstrap-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -22,24 +22,33 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Valhalla</title>
     <!-- Iconos-->
-    <script defer src="https://kit.fontawesome.com/f1b28400fa.js" crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/f1b28400fa.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Saira+Condensed:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Saira+Condensed:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="body">
     <header class="hero">
       <nav class="nav">
-        <img class="img-logo" src="assets/logo-valhalla-fondo - copia.jpg" alt="logo of Valhalla">
+        <img
+          class="img-logo"
+          src="assets/logo-valhalla-fondo - copia.jpg"
+          alt="logo of Valhalla"
+        />
         <div class="menu-toggle"></div>
         <div class="nav-container">
           <a class="nav-link" href="#store">Tienda</a>
           <a class="nav-link" href="">Nosotros</a>
           <a class="nav-link" href="">Contacto</a>
-          <a id="botonCarrito" data-bs-toggle="modal"
-          data-bs-target="#idModalCarrito"
-          class="nav-link" href=""><i class="fas fa-shopping-cart fa-1x"></i></a>
+          <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="nav-link" href=""><i class="fas fa-shopping-cart fa-1x"></i></a>
         </div>
       </nav>
       <!-- <nav class="navbar navbar-expand-lg">
@@ -86,37 +95,37 @@
         </div>
       </nav> -->
       <!-- Boton Modo Oscuro -->
-          
-            <div id="toggle">
-              <i class="indicator"></i>
-          </div>
+
+      <div id="toggle">
+        <i class="indicator"></i>
+      </div>
 
       <!-- Nuevo header -->
       <section class="showcase">
-        
         <div class="left">
           <h1 class="title">VALHALLA</h1>
           <h2 class="sub-title">Tienda de bebidas</h2>
-          <img class="estrella celeste" src="assets/estrella1.svg" alt="">
-          <img class="estrella amarilla" src="assets/estrella2.svg" alt="">
-          <img class="estrella verde" src="assets/estrella3.svg" alt="">
+          <img class="estrella celeste" src="assets/estrella1.svg" alt="" />
+          <img class="estrella amarilla" src="assets/estrella2.svg" alt="" />
+          <img class="estrella verde" src="assets/estrella3.svg" alt="" />
           <h3 class="sub-title-2">Nosotros hacemos tu previa</h3>
-          <img class="hacha" src="assets/hacha.svg" alt="">
-          <img src="assets/wine-bottle-1.png" class="botella" alt="">
+          <img class="hacha" src="assets/hacha.svg" alt="" />
+          <img src="assets/wine-bottle-1.png" class="botella" alt="" />
         </div>
-      
       </section>
     </header>
 
     <!-- fin del hero -->
 
-    
     <main class="container-a" id="store">
       <h2 class="main__title">Bienvenid@s a la tienda de VALHALLA</h2>
 
       <ul style="list-style: none" class="seleccionar">
-        <select id="seleccionDeOrden" class="form-select form-select-sm"
-          aria-label=".form-select-sm example">
+        <select
+          id="seleccionDeOrden"
+          class="form-select form-select-sm"
+          aria-label=".form-select-sm example"
+        >
           <option selected>Ordenar por:</option>
           <option value="1">Mayor a menor precio</option>
           <option value="2">Menor a mayor precio</option>
@@ -157,18 +166,42 @@
             <p id="precioTotal"></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
 
-            <button type="button" data-bs-dismiss="modal" class="btn btn-success btn-fin" id="finalizarCompra">Finalizar Compra</button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="btn btn-success btn-fin"
+              id="finalizarCompra">
+              Finalizar Compra
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <h4 class="title__social">Seguinos o contactanos a través de nuestras redes</h4>
+    <h4 class="title__social">
+      Seguinos o contactanos a través de nuestras redes
+    </h4>
     <div class="social-networks">
-      <a href="https://www.instagram.com/valhalla_bebidas.ag/" class="social-network" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://api.whatsapp.com/send?phone=5493547544329" class="social-network" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      <a
+        href="https://www.instagram.com/valhalla_bebidas.ag/"
+        class="social-network"
+        target="_blank"
+        ><i class="fa-brands fa-instagram"></i>
+      </a>
+      <a
+        href="https://api.whatsapp.com/send?phone=5493547544329"
+        class="social-network"
+        target="_blank"
+        ><i class="fa-brands fa-whatsapp"></i
+      ></a>
     </div>
 
     <footer class="footer">VALHALLA ©</footer>

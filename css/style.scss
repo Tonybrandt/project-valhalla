@@ -107,12 +107,12 @@ body.active {
     }
 
     .amarilla {
-      top: 650px;
+      top: 510px;
       left: 10px;
     }
 
     .verde {
-      top: 650px;
+      top: 550px;
       right: 50px;
     }
 
@@ -134,19 +134,19 @@ body.active {
       position: absolute;
       transform: scale(0.8) rotate(-45deg);
       top: 50%;
-      left: 5%;
+      left: 10%;
       z-index: 1;
       @include mobile {
         position: absolute;
-        transform: scale(0.4) rotate(-45deg);
-        top: 85%;
-        right: 0px;
+        transform: scale(0.3) rotate(-45deg);
+        top: 65%;
+        left: auto;
       }
       @include small {
         position: absolute;
         transform: scale(0.2) rotate(-45deg);
-        top: 85%;
-        right: 150px;
+        top: 65%;
+        left: auto;
       }
     }
   }
