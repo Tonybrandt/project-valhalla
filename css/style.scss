@@ -33,8 +33,9 @@ body.active {
   justify-content: space-between;
   padding: 0 5%;
   .img-logo {
-    height: 70px;
+    height: 50px;
     border-radius: 7px;
+    margin: auto 0;
   }
 }
 
@@ -145,8 +146,7 @@ body.active {
       @include small {
         position: absolute;
         transform: scale(0.2) rotate(-45deg);
-        top: 65%;
-        left: auto;
+        left: -50px;
       }
     }
   }
@@ -204,6 +204,9 @@ body.active {
     display: block;
     margin: 40px 0 20px 10px;
     width: 40%;
+    @include mobile {
+      width: 70%;
+    }
   }
 }
 
@@ -329,6 +332,9 @@ body.active {
     .nav-link {
       display: inline-block;
       font-size: 2em;
+      &.store {
+        display: none;
+      }
     }
     &.active {
       position: fixed;
@@ -395,6 +401,10 @@ body.active {
   #toggle {
     right: 35px;
     top: 90px;
+  }
+
+  .store {
+    display: none;
   }
 
 }
